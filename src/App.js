@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import Nested from './Nested'
+import React, {Component} from 'react';
+class App extends Component {
+  state = {
+    ninjas: [
+      {name: 'Runo', age: '20', gender: 'male' , id: 1},
+      {name: 'Tio', age: '27', gender: 'male' , id: 2},
+      {name: 'Lymdi', age: '37', gender: 'male' , id: 3},
+    ]
+  }
+  render() {
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+      <div className="App">
+        <h1>Welcome My First React App ':)'</h1> 
+        <Nested  ninjas={this.state.ninjas} />
+      </div>
+    );
+  }
 }
 
 export default App;
